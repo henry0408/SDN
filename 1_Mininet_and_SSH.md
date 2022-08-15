@@ -15,12 +15,12 @@ From http://www.virtualbox.org/wiki/Downloads
 ### 1. Install Xming:
   1. Click "XLaunch", click next page until: 
   
-    ![image](https://user-images.githubusercontent.com/58734009/184642711-8abd1c0b-2ab6-423b-ad23-09e899de3ce9.png)
+   ![image](https://user-images.githubusercontent.com/58734009/184642711-8abd1c0b-2ab6-423b-ad23-09e899de3ce9.png)
     
   2. Click "Save Configuration" and the path should be the same as your Xming.
     As for me, it is at Program Files (x86) then Xming:
     
-    ![image](https://user-images.githubusercontent.com/58734009/184642942-ef01d14b-bd64-4eaa-a974-88442302de45.png)
+   ![image](https://user-images.githubusercontent.com/58734009/184642942-ef01d14b-bd64-4eaa-a974-88442302de45.png)
     
 ### 2. Install Putty
   
