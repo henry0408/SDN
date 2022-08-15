@@ -67,25 +67,25 @@ There will be two optionals for Windows users, but I recommend to use the second
   1. Excute Xming (check your status bar on your PC)
   2. Excute PuTTY
   
-    ![image](https://user-images.githubusercontent.com/58734009/184643618-c87c1c61-68c6-4485-9465-b44616f1c188.png)
+   ![image](https://user-images.githubusercontent.com/58734009/184643618-c87c1c61-68c6-4485-9465-b44616f1c188.png)
 
   3. Enter the IP address for eth0
     
-    ![image](https://user-images.githubusercontent.com/58734009/184643699-2936c067-fe09-4b92-a2c1-dbf38fef0029.png)
+   ![image](https://user-images.githubusercontent.com/58734009/184643699-2936c067-fe09-4b92-a2c1-dbf38fef0029.png)
     
-    Note that the IP address should be the same as you have seen using "ifconfig" in Mininet VM:
+    `Note that the IP address should be the same as you have seen using "ifconfig" in Mininet VM:`
     
-    ![image](https://user-images.githubusercontent.com/58734009/184644030-cd136f69-f04b-47a3-aaaf-a222b1389ac0.png)
+   ![image](https://user-images.githubusercontent.com/58734009/184644030-cd136f69-f04b-47a3-aaaf-a222b1389ac0.png)
 
-  4. Click SSH and click the "Enable X11 forwarding" box
+  4. Click SSH and click the "Enable X11 forwarding" box, then click "Open"
     
-    ![image](https://user-images.githubusercontent.com/58734009/184644056-5ea55c5c-6c9a-44b4-af38-14184b7f3cf2.png)
+   ![image](https://user-images.githubusercontent.com/58734009/184644056-5ea55c5c-6c9a-44b4-af38-14184b7f3cf2.png)
     
-    Then click "Open"
+    
     
   5. Enter your username and password for Mininet and you can successfully
     
-    ![image](https://user-images.githubusercontent.com/58734009/184644229-4fb3e354-1144-4ce6-a47e-b1f02cc257d1.png)
+   ![image](https://user-images.githubusercontent.com/58734009/184644229-4fb3e354-1144-4ce6-a47e-b1f02cc257d1.png)
 
 ### Method 2: Remote the Mininet using Ubuntu
 
