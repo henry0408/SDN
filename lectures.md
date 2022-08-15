@@ -1,3 +1,19 @@
+# Lecture 1
+## 1. What is SDN?
+A new architecture that makes networks more programmable than in the past.
+
+Key principles: Centralised control, Open interfaces, Flow-based routing.
+
+Important SDN technology: OpenFlow is the most widely adopted protocol. OpenFlow是最广泛采用的协议
+![image](https://user-images.githubusercontent.com/58734009/184665275-f4423e7c-87bd-4b01-a818-c9391d7fdfe5.png)
+
+## 2. Basic Concept of SDN
+  1. Separate Control plane and Data plane entities
+  2. Execute or run Control plane software on general purpose hardware.
+  3. Have programmable data planes.
+  4. An architecture to control not just a networking device but an entire network.
+
+# Lecture 2 
 ## 1. What is Openflow?
 OpenFlow is communication interface between the control and data plane of an SDN architecture.
 
