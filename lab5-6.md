@@ -47,4 +47,4 @@ sudo python ./mininet/examples/miniedit.py
 ## 3. Open vSwitch Configuration
 ![image](https://user-images.githubusercontent.com/58734009/188490170-44904a52-54e4-49ce-89c7-d4d57ddc80aa.png)
 
-
+点击Run --> Show OVS Summary以显示交换机配置的列表。这是一种验证Switches是否正在侦听正确的controller的方法。在运行“显示OVS摘要”之前，请检查网络模拟中的交换机配置，并验证所有配置都正确设置。
