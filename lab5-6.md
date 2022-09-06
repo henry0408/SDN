@@ -105,5 +105,6 @@ sudo python ./mininet/examples/miniedit.py
 * 首先将保存的.py文件变为可执行文件：```sudo chmod 777 lab5.py```
 * 接着输入```sudo ./lab5.py```
 
+![image](https://user-images.githubusercontent.com/58734009/188630095-d6753605-c505-40f7-9920-1b148f1ae8f2.png)
 
 
