@@ -108,3 +108,8 @@ sudo python ./mininet/examples/miniedit.py
 ![image](https://user-images.githubusercontent.com/58734009/188630095-d6753605-c505-40f7-9920-1b148f1ae8f2.png)
 
 
+## 10.查看导出的.py文件
+```vi lab5.py```
+![image](https://user-images.githubusercontent.com/58734009/188681727-2ebc01f2-a869-4dde-98ae-35cf27927ab0.png)
+
+退出：```:q```
