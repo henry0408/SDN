@@ -110,11 +110,16 @@ Additionally, each flow entry defines a selector and treatment which is the set 
 
 
 ## 10. Starting your intentions
-  
-![image](https://user-images.githubusercontent.com/58734009/189533799-cf0c1a04-64ef-4cc8-8a7c-a91b425f8147.png)
-  
-![image](https://user-images.githubusercontent.com/58734009/189533820-11e743a6-94ab-4603-ae02-9d38faf29fc6.png)
 
-![image](https://user-images.githubusercontent.com/58734009/189533849-a41f6ed3-0339-416b-8286-823d4ca190ef.png)
+* 先查看所有可用的hosts：
+  ![image](https://user-images.githubusercontent.com/58734009/189533799-cf0c1a04-64ef-4cc8-8a7c-a91b425f8147.png)
+* 接着选择任意两个host，并在他们之间install a host to host intent
+  Please note, if the host doesn't have VLAN, please change -1 on demand
+
+  ![image](https://user-images.githubusercontent.com/58734009/189533820-11e743a6-94ab-4603-ae02-9d38faf29fc6.png)
+
+* 现在我们设置了两个hosts之间的一条路径，你可以看到intent：  
+  ![image](https://user-images.githubusercontent.com/58734009/189533849-a41f6ed3-0339-416b-8286-823d4ca190ef.png)
   
+![image](https://user-images.githubusercontent.com/58734009/189533952-99db4c40-eaad-45eb-847c-ca3d4e1be6a5.png)
   
