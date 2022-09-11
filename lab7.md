@@ -1,5 +1,9 @@
 # lab7 ONOS
 
+作为目前最受欢迎的两款开源控制器，OpenDaylight 和 ONOS 在业界非常的火，至于 Ryu/Floodlight 之类，只能靠后站了。OpenDaylight作为 企业（数据中心场景） 主推的控制器，支持的功能较多，也更庞杂；而 ONOS 是运营商主推的控制器，更加贴近运营商的场景。
+具体来讲，ODL 采取了更为平缓的 SDN 演进方式，从理念上更为贴近广义的 SDN，即不局限于 OpenFlow 协议，不局限于完全将控制平面从转发设备上剥离，通过已有的网络协议将部分的控制逻辑放到 Controller 上。
+ONOS 更贴近于 SDN 诞生之初时狭义的 SDN 概念，即通过 OpenFlow 将控制平面和转发平面完全分离，网络设备只是进行转发的黑盒子，通过 Controller 完成一切计算。ONOS 所选择的理念与运营商自己的利益息息相关，只有将控制能力拿到自己手里，才能在整条产业链上逐步摆脱设备厂商的控制。
+
 ## 1. ONOS安装
 从https://wiki.onosproject.org/display/ONOS/Basic+ONOS+Tutorial 下载.ovs文件，双击用VM Virtual Box打开
 
