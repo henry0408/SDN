@@ -92,3 +92,29 @@ Each flow entry is tagged by an application id that identifies which application
 
 Additionally, each flow entry defines a selector and treatment which is the set of traffic matched by the flow entry and how this traffic should be handled
 每个流条目都定义了一个选择器和处理方法，它是由流条目匹配的流量集，以及应该如何处理该流量
+
+## 8. Paths Command
+
+* 输入```onos>paths<Tab>``` （注意<Tab>是直接按键盘Tab键）
+  
+  ![image](https://user-images.githubusercontent.com/58734009/189533052-20339470-72bb-4d53-86c6-3874008664a3.png)
+
+* 输入```onos>paths of:000000000000000b of:000000000000000e```
+  
+  ![image](https://user-images.githubusercontent.com/58734009/189533128-62deb7c8-9da4-4f38-aff5-2db077f04792.png)
+
+## 9. Internet Command
+输入```onos>intents```
+
+* SUBMITTED – the intent has been submitted and will be processed soon
+
+
+## 10. Starting your intentions
+  
+![image](https://user-images.githubusercontent.com/58734009/189533799-cf0c1a04-64ef-4cc8-8a7c-a91b425f8147.png)
+  
+![image](https://user-images.githubusercontent.com/58734009/189533820-11e743a6-94ab-4603-ae02-9d38faf29fc6.png)
+
+![image](https://user-images.githubusercontent.com/58734009/189533849-a41f6ed3-0339-416b-8286-823d4ca190ef.png)
+  
+  
