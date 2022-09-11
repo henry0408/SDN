@@ -30,7 +30,7 @@
 
   ![image](https://user-images.githubusercontent.com/58734009/189523016-3cedf3ca-ec2d-41f5-b0b2-17d5641d8a88.png)
 
-  ping失败了，因为我们没有加载reactive forwarding application。
+  ping失败了，因为我们没有加载reactive forwarding application数据转发模块。
 
 * check the list of loaded application：```onos>apps -a -s```
 
@@ -71,5 +71,20 @@ list the links detected by ONOS: ```onos> links```
 ## 6. Host command
 ```onos>hosts```
 
+结果display the hosts’ id, MAC address and where in the network it is connected
 
+ ‘-1’ （在此版本中为id后面的None）in the id filed is represents the VLAN information, in this case there is no VLAN.
+ 
+ ## 7. Flows Command
+ observe which flow entries are currently registered in the system\
+ * PENDING_ADD – the flow has been submitted and forwarded to the swtich
+ * ADDED – the flow has been added to the switch
+ * PENDING_REMOVE – the request to remove the flow has been submitted and forwarded to the switch
+ * REMOVED – the rule has been removed
 
+![image](https://user-images.githubusercontent.com/58734009/189525442-e170d15e-cd13-4ae0-9192-c87d511897e2.png)
+
+Each flow entry is tagged by an application id that identifies which application installed this flow entry用来标识哪个应用程序安装了这个流条目。此特性将帮助管理员识别哪些应用程序可能行为不当或消耗了许多资源。
+
+Additionally, each flow entry defines a selector and treatment which is the set of traffic matched by the flow entry and how this traffic should be handled
+每个流条目都定义了一个选择器和处理方法，它是由流条目匹配的流量集，以及应该如何处理该流量
