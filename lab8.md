@@ -1,0 +1,68 @@
+# lab8
+
+## 1.启动ONOS CLI之后输入
+![image](https://user-images.githubusercontent.com/58734009/190889981-507b60f7-117a-4534-8ea7-b523566cda02.png)
+
+## 2.打开ONOS GUI，User为onos，密码为rocks
+![image](https://user-images.githubusercontent.com/58734009/190890022-62e55c6d-e500-43f1-a70d-46886a6df7c3.png)
+
+![image](https://user-images.githubusercontent.com/58734009/190890033-d6defad3-1bbf-453a-8b87-293683c3672e.png)
+
+启动Spine Leaf Topology之后会显示：
+
+![image](https://user-images.githubusercontent.com/58734009/190890326-0b12aa66-4e97-44d4-bbe0-29e345f2b406.png)
+
+## 3. GUI cheatsheet
+点击键盘“/”键
+
+![image](https://user-images.githubusercontent.com/58734009/190890393-2dc0692d-849a-43f8-b5ea-bf2d62b83e83.png)
+
+## 4. 让主机在网络中互相对话
+
+运行pingall
+
+![image](https://user-images.githubusercontent.com/58734009/190890459-cc042007-6291-4bc4-8c75-01282e339667.png)
+
+会发现界面里没有变化，此时在browser window中type "h":
+
+![image](https://user-images.githubusercontent.com/58734009/190890490-27baa128-49b3-42f5-a65f-47ce7463f341.png)
+
+## 5. switch details
+点击任何一个switch，右侧会出现它的information
+
+![image](https://user-images.githubusercontent.com/58734009/190890551-05409caf-dae0-4ae7-b8cd-2c022b87836a.png)
+
+注意，显示有8个port，但只能看到7个的原因是OpenFlow switches have virtual ports that are hard to show on a GUI.
+
+## 6. Instance
+GUI可以显示哪个ONOS实例是active的，点击键盘"i"键，可以出现 (再按一次隐藏)：
+
+![image](https://user-images.githubusercontent.com/58734009/190890731-00e7f114-c850-4f78-b9a0-662648f61041.png)
+
+请注意，开关的图形改变了颜色，这表明哪个开关是由哪个实例控制的。这对于一眼看出哪些开关是由哪些ONOs实例控制的是很有用的。
+（上面的图说明6个switch都由172.17.0.3这个instance控制）
+
+## 7. Install Intent
+要使用GUI安装即时主机， 首先选择两个host（鼠标点中一个接着按住shift选中第二个）。Let’s pick 10.0.0.20 and 10.0.0.9. 接着 a pane will appear on the right hand 
+side of the screen as shown here.
+
+![image](https://user-images.githubusercontent.com/58734009/190891129-8ddc904a-70b1-4d35-a0da-a0f0258d75b9.png)
+
+* Click on ‘Create Host-to-Host Flow’,这会提供一个host to host intent，并且path会照亮
+
+![image](https://user-images.githubusercontent.com/58734009/190891163-b7fb7f15-1d49-4d6d-9d15-5304d8900a12.png)
+
+![image](https://user-images.githubusercontent.com/58734009/190891185-e1fd29a1-f86b-484e-8044-075c37460efa.png)
+
+* You can check that the intent was installed via the ONOS CLI.
+![image](https://user-images.githubusercontent.com/58734009/190891258-338041e7-7b25-4515-bebe-6e9fe2e0522d.png)
+
+## 8. Show all traffic 
+* mininet>h24 ping h42
+![image](https://user-images.githubusercontent.com/58734009/190891651-9cf90e1d-84d3-4cd4-bbc1-e1537af590e5.png)
+
+* 在browser中，点击键盘"a"可以显示any traffic that is running on the network
+
+![image](https://user-images.githubusercontent.com/58734009/190891514-da1a5e4c-e935-4d03-ae1d-9376e969ff99.png)
+
+
