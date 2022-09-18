@@ -65,4 +65,8 @@ side of the screen as shown here.
 
 ![image](https://user-images.githubusercontent.com/58734009/190891514-da1a5e4c-e935-4d03-ae1d-9376e969ff99.png)
 
+## 9. 改变ONOS nodes assign的switch数量
+
+上面的图可以看到，所有的switch都被分配给第二个ONOS node，而其他的两个ONOS nodes没有master的switch
+
 
