@@ -62,12 +62,13 @@ side of the screen as shown here.
 ![image](https://user-images.githubusercontent.com/58734009/190891258-338041e7-7b25-4515-bebe-6e9fe2e0522d.png)
 
 ## 8. Show all traffic 
-* mininet>h24 ping h42
-![image](https://user-images.githubusercontent.com/58734009/190891651-9cf90e1d-84d3-4cd4-bbc1-e1537af590e5.png)
+* ```mininet>h24 ping h42```
+
+  ![image](https://user-images.githubusercontent.com/58734009/190891651-9cf90e1d-84d3-4cd4-bbc1-e1537af590e5.png)
 
 * 在browser中，点击键盘"a"可以显示any traffic that is running on the network
 
-![image](https://user-images.githubusercontent.com/58734009/190891514-da1a5e4c-e935-4d03-ae1d-9376e969ff99.png)
+  ![image](https://user-images.githubusercontent.com/58734009/190891514-da1a5e4c-e935-4d03-ae1d-9376e969ff99.png)
 
 ## 9. 改变ONOS nodes assign的switch数量
 
@@ -84,9 +85,11 @@ balance之后变成：
 Press the L key to cycle between friendly lables, device ids and no labels
 
 * friendly labels:
+  
   ![image](https://user-images.githubusercontent.com/58734009/191029322-804935dc-412a-4215-8ea1-0738f04428ab.png)
 
 * devices ids
+  
   ![image](https://user-images.githubusercontent.com/58734009/191029369-e23131f1-98de-492b-9478-8546a40371f0.png)
 
 # 11. ONOS REST APIs
