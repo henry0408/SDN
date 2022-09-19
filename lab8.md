@@ -67,6 +67,22 @@ side of the screen as shown here.
 
 ## 9. 改变ONOS nodes assign的switch数量
 
-上面的图可以看到，所有的switch都被分配给第二个ONOS node，而其他的两个ONOS nodes没有master的switch
+上面的图可以看到，所有的switch都被分配给第二个ONOS node，而其他的两个ONOS nodes没有master的switch.
+
+ONOS GUI（以及 CLI）允许用户强制重新平衡主控权(force mastership re-balancing )，其中网络设备将在 ONOS 集群中的所有节点之间大致平均分配。 要从 GUI 执行此操作，请按 E 键。
+
+balance之后变成：
+
+![image](https://user-images.githubusercontent.com/58734009/191028987-defa49ff-e817-40c7-b8c3-1cb9e5c6091b.png)
 
 
+# 10. Display the node labels
+Press the L key to cycle between friendly lables, device ids and no labels
+
+* friendly labels:
+  ![image](https://user-images.githubusercontent.com/58734009/191029322-804935dc-412a-4215-8ea1-0738f04428ab.png)
+
+* devices ids
+  ![image](https://user-images.githubusercontent.com/58734009/191029369-e23131f1-98de-492b-9478-8546a40371f0.png)
+
+# 11. 
