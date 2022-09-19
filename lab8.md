@@ -1,5 +1,8 @@
 # lab8
 
+Basic ONOS tutorial: https://wiki.onosproject.org/display/ONOS/Basic+ONOS+Tutorial
+
+
 ## 1.启动ONOS CLI之后输入
 ![image](https://user-images.githubusercontent.com/58734009/190889981-507b60f7-117a-4534-8ea7-b523566cda02.png)
 
@@ -85,4 +88,32 @@ Press the L key to cycle between friendly lables, device ids and no labels
 * devices ids
   ![image](https://user-images.githubusercontent.com/58734009/191029369-e23131f1-98de-492b-9478-8546a40371f0.png)
 
-# 11. 
+# 11. ONOS REST APIs
+* 打开新的web browser, 输入the following URL: ```http://<ONOS IP>:8181/onos/v1/docs```
+
+  ![f2effb5a029c289cf9d6202105b7b99](https://user-images.githubusercontent.com/58734009/191032121-08250748-99e3-468e-b6fa-b2a8174320d1.png)
+
+  用户名密码分别为：onos, rocks
+
+* ONOS uses Swagger to generate the REST API documentation:
+
+  ![image](https://user-images.githubusercontent.com/58734009/191032242-c6c4308a-a899-4798-9ac1-ca268754afc8.png)
+
+# 12. ONOS Core API summary
+
+## 1. Device
+![image](https://user-images.githubusercontent.com/58734009/191032640-f0a9a16d-8f32-4279-b516-219dbbb8ea7c.png)
+
+GET /devices 列出所有基础设施设备。\
+GET /devices/{deviceId} 列出特定基础设施设备的详细信息。\
+GET /devices/{deviceId}/ports 列出特定基础设施设备的端口。\
+POST /devices 在清单中创建一个新的基础设施设备（未来）。\
+PUT /devices/{deviceId} 更新设备 - 属性、可用性、主控权。\
+DELETE /devices/{deviceId} 从清单中删除基础设施设备。\
+
+选中GET/Device并点击Try it all button：
+
+![image](https://user-images.githubusercontent.com/58734009/191033998-0d26cf30-613c-43d9-baa3-72c12b5a859d.png)
+
+
+
