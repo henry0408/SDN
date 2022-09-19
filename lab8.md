@@ -23,7 +23,7 @@
 
 ![image](https://user-images.githubusercontent.com/58734009/190890459-cc042007-6291-4bc4-8c75-01282e339667.png)
 
-会发现界面里没有变化，此时在browser window中type "h":
+会发现界面里没有变化，此时在browser window中type "h": （不pingall点击h也可以看到所有hosts）
 
 ![image](https://user-images.githubusercontent.com/58734009/190890490-27baa128-49b3-42f5-a65f-47ce7463f341.png)
 
