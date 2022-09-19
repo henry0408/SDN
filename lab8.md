@@ -2,6 +2,7 @@
 
 Basic ONOS tutorial: https://wiki.onosproject.org/display/ONOS/Basic+ONOS+Tutorial
 
+REST APIs: https://wiki.onosproject.org/display/ONOS/Appendix+B%3A+REST+API#AppendixB:RESTAPI-Host
 
 ## 1.启动ONOS CLI之后输入
 ![image](https://user-images.githubusercontent.com/58734009/190889981-507b60f7-117a-4534-8ea7-b523566cda02.png)
