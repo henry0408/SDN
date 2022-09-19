@@ -104,16 +104,43 @@ Press the L key to cycle between friendly lables, device ids and no labels
 ## 1. Device
 ![image](https://user-images.githubusercontent.com/58734009/191032640-f0a9a16d-8f32-4279-b516-219dbbb8ea7c.png)
 
-GET /devices 列出所有基础设施设备。\
-GET /devices/{deviceId} 列出特定基础设施设备的详细信息。\
-GET /devices/{deviceId}/ports 列出特定基础设施设备的端口。\
-POST /devices 在清单中创建一个新的基础设施设备（未来）。\
-PUT /devices/{deviceId} 更新设备 - 属性、可用性、主控权。\
-DELETE /devices/{deviceId} 从清单中删除基础设施设备。\
+GET /devices 列出所有基础设施设备Lists all infrastructure devices.\
+GET /devices/{deviceId} 列出特定基础设施设备的详细信息Lists details of a specific infrastructure device\
+GET /devices/{deviceId}/ports 列出特定基础设施设备的端口Lists ports of a specific infrastructure device.\
+POST /devices 在清单中创建一个新的基础设施设备（未来）Creates a new infrastructure device into inventory (future).\
+PUT /devices/{deviceId} 更新设备 - 属性、可用性、主控权Updates a device - attributes, availability, mastership.\
+DELETE /devices/{deviceId} 从清单中删除基础设施设备Deletes an infrastructure device from inventory.
 
 选中GET/Device并点击Try it all button：
 
 ![image](https://user-images.githubusercontent.com/58734009/191033998-0d26cf30-613c-43d9-baa3-72c12b5a859d.png)
+
+ONOS API返回的响应将返回具有关联属性的所有设备的列表：
+
+![image](https://user-images.githubusercontent.com/58734009/191035827-35061b8a-7511-4af8-8c00-a027e0e080e6.png)
+
+
+## 2. Hosts
+![image](https://user-images.githubusercontent.com/58734009/191035944-04aa65bd-297f-414a-823c-c092fef38a61.png)
+
+GET /hosts 列出所有终端站主机Lists all end-stations hosts\
+GET /hosts/{hostId} 列出由主机 ID 指定的特定终端主机的详细信息Lists details of a specific end-station host specified by the host ID\
+GET /hosts/{mac}/{vlan} 列出由主机 MAC 地址和 VLAN Id 指定的特定终端站主机的详细信息Lists details of a specific end-station host specified by the host MAC address and VLan Id.\
+POST /hosts 在清单中创建一个新的终端站主机（未来）Creates a new end-station host into inventory (future)\
+PUT /hosts/{hostId} 更新终端主机 - 属性，例如IP，位置Updates an end-station host - attributes, e.g. IP, location.\
+DELETE /hosts/{hostId} 从清单中删除终端站主机Deletes an end-station host from inventory.
+
+选中POST /hosts, 输入以下内容（可以直接点击右侧黄色框的example，快速填入），并点击try it out:
+
+![image](https://user-images.githubusercontent.com/58734009/191037231-e0b59770-4c14-4c00-9853-da1890986211.png)
+
+
+![image](https://user-images.githubusercontent.com/58734009/191037157-68ea6186-9ae9-40fc-9bb8-7567b833c75c.png)
+
+回到ONOS GUI，我们可以看到一个新的device添加到了network：
+
+![image](https://user-images.githubusercontent.com/58734009/191037594-55fd0044-37ab-424c-a6e9-cae6aaf836b8.png)
+
 
 
 
