@@ -83,7 +83,7 @@ The role and function of each part:
 # 5. P4 five different language components
 P4 achieves the architecture by using ***five different language components***:\ 
 Headers, Parsers, Controls, Table, Actions.\
-We will study to use these components and finally complete the ‘basic.p4’ file.\
+We will study to use these components and finally complete the ‘basic.p4’ file.
 
 
 ## 1) P4 Programming Headers
@@ -92,7 +92,24 @@ Header definitions describe packet formats and provide names for the fields with
 The language allows customized header names and fields of arbitrary length, although many header definitions use widely known protocol names and fields widths.\
 该语言允许自定义任意长度的头名称和字段，尽管许多头定义使用众为人知的协议名称和字段宽度。
 
+Our lab only focuses on ipv4 addresses, so we don’t need to identify ipv6 formats (but you can try to add it if you can). Figure below shows the ‘Headers’ of this lab.
 
+![image](https://user-images.githubusercontent.com/58734009/194354096-e2bd82e3-3e68-434b-b222-6ec286810c5d.png)
+
+Some keywords (with explanations) used in ‘Headers.’
+
+|Types |Examples |Notes |
+| ---- | ---- | ---- |
+| bit | bit<N> | unsigned integers of width N |
+| typedef | typedef bit<48> macAddr_t; | To support giving convenient names to commonly-used types, P4 provides type definitions. 为了支持为常用的类型提供方便的名称，P4提供了类型定义。With the declaration of the example, the types bit<48> and macAddr_t are synonyms同义词 that are treated as equivalent by the type checker. |
+| headers | header ethernet_t { ***} | P4 provides a built-in type for representing headers, using syntax that resembles the C struct. |
+| struct | Struct headers {***} | For instantiation实例化 |
 
 
 ## 2) P4 programming Parsers
+Parser maps the bits in the actual packet into typed representations. 解析器将实际数据包中的位映射到类型化的表示形式中
+  
+The role of the parser is to identify the headers present in each incoming packet correctly. 
+
+The parser produces a parsed representation of all relevant headers for each packet, which is then passed to the first control block. The sequence of control blocks in turn further processes the packet.  
+  
