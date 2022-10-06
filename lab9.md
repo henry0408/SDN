@@ -6,7 +6,7 @@ This lab:  first two components of the P4 language:
 * Headers
 * Parsers
 
-## 1.
+## 1. 官方教程
 https://github.com/p4lang/tutorials
 
 ![image](https://user-images.githubusercontent.com/58734009/194260467-ce81db56-04a3-4bc6-96b4-5cb2630eace3.png)
