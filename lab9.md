@@ -1,5 +1,14 @@
 # P4 tutorial
 
+<注>如何改变VM分辨率：
+
+![image](https://user-images.githubusercontent.com/58734009/194343297-6ab246f9-1e06-45c9-9e0e-c97a03ea44b7.png)
+
+如何改变P4 VM分辨率：
+
+![0f8adfd8c6834db6926d81ddb0d5111](https://user-images.githubusercontent.com/58734009/194344472-c9772e9c-053e-431f-a4f5-8abadd9674b3.jpg)
+
+
 Programming Protocol-independent Packet Processors编程协议无关的包处理器（P4）是一种特定于网络设备的领域语言，指定数据平面设备（交换机、nic、路由器、过滤器等）处理数据包
 
 This lab:  first two components of the P4 language: 
@@ -21,15 +30,69 @@ https://drive.google.com/file/d/1ZkE5ynJrASMC54h0aqDwaCOA0I4i48AC/view?usp=shari
 2) step 2. Select and import target virtual machine\
 ![image](https://user-images.githubusercontent.com/58734009/194266967-ede47623-55f7-4dce-8dd7-ae2a8a97bd98.png)
 
-
 3) 步骤3：此虚拟机有两个用户帐户。正常的是用户id“p4”，密码为“p4”。\
 另一个具有一个主目录，其中包含用于构建已安装的二进制文件的P4开发工具的源代码source code，其用户id为“vagrant”，密码为“vagrant”。\
-除非您想查看该源代码，否则建议使用普通的源代码。\
+除非您想查看该源代码，否则建议使用普通的账户登录
+
+![image](https://user-images.githubusercontent.com/58734009/194339115-17d9aeb9-56ab-4977-a623-fb28a4efc185.png)
+
 
 # 2. Warming Up testing for P4
-Open the ‘basic’ folder in the shell; it could be found at tutorials/exercises/basic.
+
+### 1) Open the ‘basic’ folder in the shell; it could be found at tutorials/exercises/basic.
 
 Input the ‘make run’ command to run the network with basic topo.
 
-<注>红色的方框突出显示了已用于设置此网络的文件.
+![image](https://user-images.githubusercontent.com/58734009/194344889-6cf1c065-47e4-4205-8a48-73b19639ada1.png)
 
+<注>b4c-bm2-ss --p4v 16 --p4runtime-files build/basic.p4.p4info.txt -o build/basic.json basic.p4: 显示了已用于设置此网络的文件.
+
+![image](https://user-images.githubusercontent.com/58734009/194347695-880173ea-deec-4b1a-a4b0-6b02a45dfb63.png)
+
+### 2) 输入dump或net查看topo
+![image](https://user-images.githubusercontent.com/58734009/194347979-a4cf60d3-52a3-4257-b6af-897961f8d1f1.png)
+
+![image](https://user-images.githubusercontent.com/58734009/194348033-57d96a57-add8-48e6-8d0f-ddd7a1a3c9f9.png)
+
+<注>此时尝试ping会失败，because each switch is programmed according to ‘basic.p4'，然而‘basic.p4’ is incomplete, dropping all packets on arrival.
+
+### 3）leave 'xterm': mininet> exit
+
+### 4) stop mininet: 
+* $ make stop
+* $ make clean
+
+
+# 3. View and complete basic.p4:
+
+![image](https://user-images.githubusercontent.com/58734009/194349778-467d0b70-98a4-4291-b6c2-919f5dd81d03.png)
+
+# 4. P4 Architecture
+Basic structure:\
+![image](https://user-images.githubusercontent.com/58734009/194351209-fb8bc925-6182-40a6-80ac-21c7a7c8c2c6.png)
+
+这是一个基本的P4体系结构，P4只支持基本功能。P4的体系结构可以有所不同，更复杂，并在现实世界中支持更多的功能。
+
+The role and function of each part:
+* ‘Parser’: produces a parsed representation of all relevant headers.生成所有相关头的解析表示
+* ‘Ingress’: defines some match-action pipelines; matches, and then executes the action.定义一些匹配操作管道；匹配，然后执行该操作。
+* ‘Switching logic’: implements the logic designed; the buffer could be set here.实现了所设计的逻辑；缓冲区可以在这里设置。
+* ‘Egress’: defines some match-action pipelines; matches, and then executes the action "出口"：定义了一些匹配操作管道；匹配，然后执行该操作
+* ‘Deparser’: Reverse Operation of ‘Parser.’ Reassembling packets.重新组装数据包
+
+# 5. P4 five different language components
+P4 achieves the architecture by using ***five different language components***:\ 
+Headers, Parsers, Controls, Table, Actions.\
+We will study to use these components and finally complete the ‘basic.p4’ file.\
+
+
+## 1) P4 Programming Headers
+
+Header definitions describe packet formats and provide names for the fields within the packet. 描述了包的格式，并为包内的字段提供了名称
+The language allows customized header names and fields of arbitrary length, although many header definitions use widely known protocol names and fields widths.\
+该语言允许自定义任意长度的头名称和字段，尽管许多头定义使用众为人知的协议名称和字段宽度。
+
+
+
+
+## 2) P4 programming Parsers
