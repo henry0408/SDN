@@ -173,6 +173,9 @@ Parser maps the bits in the actual packet into typed representations. 解析器�
 The role of the parser is to identify the headers present in each incoming packet correctly. 解析器的作用是正确识别每个传入数据包中存在的头
 
 The parser produces a parsed representation of all relevant headers for each packet, which is then passed to the first control block. The sequence of control blocks in turn further processes the packet.  解析器为每个数据包生成所有相关头的解析表示，然后将其传递给第一个控制块。控制块的顺序依次进一步处理数据包。
+
+Parser 的角色很重要，但也很简单，就是把一个网络包 headers 里面的信息都解析出来。就像下面这幅图中，一个 packet 可能有很多层 header 包含了不同的信息，Layer-2 的 MAC 地址信息、Layer-3 的 IP 地址信息、Layer-4 的 Port 信息等等。Parser 的任务，就是把这些信息都解析出来，存储为 P4 能理解的数据结构，比如我们之前讲的 struct 和 header。 而 P4 的实现方式，就是靠状态机。\
+![image](https://user-images.githubusercontent.com/58734009/195607431-f0071bb4-b2c6-459d-a606-9d36a1adc39b.png)
   
 Some key commands in the "Parsers":
 
@@ -191,3 +194,4 @@ and finally accept the package.
 
 ![image](https://user-images.githubusercontent.com/58734009/195606602-f4b57bc5-2a94-4f38-a45b-18b89598398b.png)
 
+![image](https://user-images.githubusercontent.com/58734009/195609370-68411e3e-d7a3-4311-8bf7-0e7e5ed9b36c.png)
