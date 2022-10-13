@@ -129,6 +129,19 @@ The language allows customized header names and fields of arbitrary length, alth
 
 Our lab only focuses on ipv4 addresses, so we don’t need to identify ipv6 formats (but you can try to add it if you can). Figure below shows the ‘Headers’ of this lab.
 
+
+P4 的基本数据类型
+和很多静态的语言类似，P4 最基本的数据类型放在了下面，P4 不支持的数据类型有 float（浮点）和 string（字符串）
+```
+bool        // Boolean value
+bit<W>      // Bit-string of width W
+int<W>      // Signed integer of width W
+varbit<W>   // Bit-string of dynamic length <= W
+match_kind  // Describes ways to match table keys
+error       // Used to signal errors
+void        // No values, used in few restricted circumstances
+```
+
 ![image](https://user-images.githubusercontent.com/58734009/194354096-e2bd82e3-3e68-434b-b222-6ec286810c5d.png)
 
 Some keywords (with explanations) used in ‘Headers.’
@@ -139,6 +152,19 @@ Some keywords (with explanations) used in ‘Headers.’
 | typedef | typedef bit<48> macAddr_t; | To support giving convenient names to commonly-used types, P4 provides type definitions. 为了支持为常用的类型提供方便的名称，P4提供了类型定义。With the declaration of the example, the types bit<48> and macAddr_t are synonyms同义词 that are treated as equivalent by the type checker. |
 | headers | header ethernet_t { ***} | P4 provides a built-in type for representing headers, using syntax that resembles the C struct. |
 | struct | Struct headers {***} | For instantiation实例化 |
+
+P4 里也可以定义一个复杂的数据结构，称为 header，也就是对应我们 packet 的 header (相当于C中的struct)\
+![image](https://user-images.githubusercontent.com/58734009/195604359-3a91ff26-6f7d-4c6b-840a-42c1b7d7aab1.png)
+
+这个 P4 的 header 和 c 的 struct 有一个主要的区别，就是 header 还有一个隐藏的 field 叫做 validity。比如说我们收到了一个 packet，要把它的 Ethernet header 解析出来，就可以这么写：\
+```
+packet.extract(ethernetHeader);
+```
+如果解析成功的话，validity 就会被自动设置为 true，等于自动帮我们确定 header 的格式是不是正确的。
+
+
+如果想要单纯的定义一个类似于 python 里的字典（dictionary）的数据结构的话，P4 提供了一个数据结构叫 struct。\
+![image](https://user-images.githubusercontent.com/58734009/195604961-1b9b9dfb-760c-4b10-8646-11efdb50aeb4.png)
 
 
 ## 2) P4 programming Parsers
@@ -163,4 +189,5 @@ and finally accept the package.
 
 ![image](https://user-images.githubusercontent.com/58734009/195543319-6e885ed9-0ca7-414d-bd6a-466542ccf542.png)
 
-![image](https://user-images.githubusercontent.com/58734009/195543361-ff10b8f4-3e72-470e-a1ed-f3b2cb31dac0.png)
+![image](https://user-images.githubusercontent.com/58734009/195606602-f4b57bc5-2a94-4f38-a45b-18b89598398b.png)
+
