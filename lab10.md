@@ -7,7 +7,7 @@ In this lab, we will continue to study the P4 language, learn the other three co
 * Tables
 * Actions
 
-# 1. Control Block
+# Control Block
 P4 parsers are responsible for extracting bits from a packet into headers. These headers (and other metadata) can be manipulated and transformed within control blocks. \
 P4解析器负责从一个数据包中提取比特到头文件中。这些头文件（和其他元数据）可以在控制块中进行操作和转换。
 
@@ -32,10 +32,17 @@ In this lab, we need to declare parameters, tables, actions and call the ‘appl
 
 ![image](https://user-images.githubusercontent.com/58734009/195614195-848a7666-3b8c-49cf-bdf9-d30ee3fcb89d.png)
 
+## 1. P4 Programming-Tables
 
+P4 tables contain the state used to forward packets. Tables are composed of lookup keys and a corresponding set of actions and their parameters. \
+P4表包含用于转发数据包的状态。表由查找键和相应的动作及其参数组成
 
+A trivial example might be to store a set of destination MAC addresses as the lookup keys, and the corresponding action could set the output port on the device, and/or increment a counter. \
+一个简单的例子可能是将一组目标MAC地址存储为查找键，并且相应的操作可以设置设备上的输出端口，并/或增加一个计数器。
 
-
+Tables and their associated actions are almost always chained together in sequence to realize the full packet forwarding logic, although in the abstract it is 
+possible to build a single table that includes all the lookup key information and the full output action set\
+表及其相关的操作几乎总是按顺序链接在一起，以实现完整的数据包转发逻辑，尽管在抽象中，可以构建一个包含所有查找键信息和完整的输出操作集的单一表
 
 
 
