@@ -1,5 +1,9 @@
 # lab10
 
+https://zhuanlan.zhihu.com/p/347282455
+
+https://zhuanlan.zhihu.com/p/348919109
+
 上周介绍了header和paser，这周介绍剩下的内容
 
 In this lab, we will continue to study the P4 language, learn the other three components of the P4 language, and complete the ‘basic.p4’ file:
