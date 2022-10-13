@@ -1,5 +1,8 @@
 # P4 tutorial
 
+一个非常好的SDN，OPenFlow和P4的整体简介：
+https://developer.aliyun.com/article/651037
+
 <注>如何改变VM分辨率：
 
 ![image](https://user-images.githubusercontent.com/58734009/194343297-6ab246f9-1e06-45c9-9e0e-c97a03ea44b7.png)
@@ -8,6 +11,9 @@
 
 ![0f8adfd8c6834db6926d81ddb0d5111](https://user-images.githubusercontent.com/58734009/194344472-c9772e9c-053e-431f-a4f5-8abadd9674b3.jpg)
 
+如何保存emacs IDE的文件：ctrl+X之后ctrl+S
+
+操作总结：https://blog.csdn.net/jasenwan88/article/details/7690364
 
 Programming Protocol-independent Packet Processors编程协议无关的包处理器（P4）是一种特定于网络设备的领域语言，指定数据平面设备（交换机、nic、路由器、过滤器等）处理数据包
 
