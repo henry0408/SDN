@@ -1,7 +1,15 @@
 # P4 tutorial
 
-一个非常好的SDN，OPenFlow和P4的整体简介：
+## 0. 教程部分
+1. 一个非常好的SDN，OPenFlow和P4的整体简介：
 https://developer.aliyun.com/article/651037
+
+2. P4 学习笔记（一）- 导论：https://zhuanlan.zhihu.com/p/346371311
+
+3. P4 学习笔记（二）- 基础语法和 Parser：https://zhuanlan.zhihu.com/p/346936899
+
+4. P4 学习笔记（三）- 控制逻辑与完整的工作流：https://zhuanlan.zhihu.com/p/347282455
+
 
 <注>如何改变VM分辨率：
 
@@ -86,11 +94,32 @@ The role and function of each part:
 * ‘Egress’: defines some match-action pipelines; matches, and then executes the action "出口"：定义了一些匹配操作管道；匹配，然后执行该操作
 * ‘Deparser’: Reverse Operation of ‘Parser.’ Reassembling packets.重新组装数据包
 
+
+所以大佬们开始琢磨，能不能从更底层入手，搞一个 Protocol Independent Switch Architecture (PISA) 出来，就把计算机网络里 packet 的转发最基础的过程高度抽象化，变成上面这个图的样子，从左到右，分别是：
+
+* Parser：先看看包里面都有啥，每一个 bit 都是什么；
+* Ingress：一堆 Match-Action 的流水线，看看哪些 bits 组成的 fields 有没有我们想要的，比如目标 IP 是不是 8.8.8.8，是的话就改写一下 header 让包能被转发到它该去的地方；
+* Switching Logic：还要有个地方实现我们想要的逻辑，或者为了高性能，放一个 buffer，存放刚被上一个环节处理完，准备给下一个环节处理的包[3]；
+* Egress：又来一堆 Match-Action 的流水线，比如改写源 MAC 地址，同时提供更多对网络包的操作空间；
+* Deparser：最后把我们改写好的 headers 重新写回网络包，然后送它出去。
+
 # 5. P4 five different language components
+
 P4 achieves the architecture by using ***five different language components***:\ 
 Headers, Parsers, Controls, Table, Actions.\
 We will study to use these components and finally complete the ‘basic.p4’ file.
 
+
+接下来就说一下 P4 的语法。P4 是一种静态语言，有点类似 C。一个代码文件基本上都长成下面这个样子：\
+![image](https://user-images.githubusercontent.com/58734009/195591814-0689c3e7-6cf2-4b6a-b5be-f2524085138c.png)
+
+* Libraries：一开始要 include 一些库文件，省的造轮子；
+* Declarations：定义一下基本的数据结构，也支持 typedef；
+* Parse packet headers：这个 Parser 的地方会放一些解析 headers 的代码；
+* Control flow：这个地方基本是最重要的逻辑部分了，这里会通过我们定义的 Match-Action functions 按照修改网络包里的内容（这里只写了 Ingress 这一步，其实还会有 Egress，等到下面 main 的时候会提到）；
+* Assemble：然后就是在 Deparser 的地方会把我们前面改好的部分重新组装成为一个新的 packet，转发出去；
+* main()：这就是我们的 main 函数了，这里其实就是把我们刚刚写的所有的部分，按照正确的顺序排列好，一个一个的调用，所有的步骤都已经罗列出来了：
+* 大体的结构可以分成三段式：Parser -> Match-Action Pipeline -> Deparser
 
 ## 1) P4 Programming Headers
 
