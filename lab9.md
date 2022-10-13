@@ -109,7 +109,23 @@ Some keywords (with explanations) used in ‘Headers.’
 ## 2) P4 programming Parsers
 Parser maps the bits in the actual packet into typed representations. 解析器将实际数据包中的位映射到类型化的表示形式中
   
-The role of the parser is to identify the headers present in each incoming packet correctly. 
+The role of the parser is to identify the headers present in each incoming packet correctly. 解析器的作用是正确识别每个传入数据包中存在的头
 
-The parser produces a parsed representation of all relevant headers for each packet, which is then passed to the first control block. The sequence of control blocks in turn further processes the packet.  
+The parser produces a parsed representation of all relevant headers for each packet, which is then passed to the first control block. The sequence of control blocks in turn further processes the packet.  解析器为每个数据包生成所有相关头的解析表示，然后将其传递给第一个控制块。控制块的顺序依次进一步处理数据包。
   
+Some key commands in the "Parsers":
+
+|transition |Transit the packet to another state |
+  | ---- | ---- |
+|extract |Extract a piece of target headers |
+|accept |Accept the package and stop the transition |
+  
+We need to set up the state of ‘parse_ethernet’ and ‘parse_ipv4’ in this lab:\
+We firstly transit the package to state ‘parse_ethernet,’ \
+then extract the ethernet piece, \
+transit the package to the state ‘parse_ipv4’, \
+and finally accept the package.
+
+![image](https://user-images.githubusercontent.com/58734009/195543319-6e885ed9-0ca7-414d-bd6a-466542ccf542.png)
+
+![image](https://user-images.githubusercontent.com/58734009/195543361-ff10b8f4-3e72-470e-a1ed-f3b2cb31dac0.png)
