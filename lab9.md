@@ -10,6 +10,7 @@ https://developer.aliyun.com/article/651037
 
 4. P4 学习笔记（三）- 控制逻辑与完整的工作流：https://zhuanlan.zhihu.com/p/347282455
 
+5. P4 Tutorial 快速上手 (3) Basic_tunnel: https://blog.csdn.net/jixie3948/article/details/124674134
 
 <注>如何改变VM分辨率：
 
